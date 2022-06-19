@@ -1,6 +1,16 @@
-import express from "express";
+import { app, setupBackend } from "./setups";
 
-const app = express();
-app.listen(8080, () => {
-  console.log("Server is running!");
-});
+import { MESSAGES } from "./consts";
+
+import { ServerLogger } from "./utils";
+
+const startServer = () => {
+  try {
+    setupBackend(app);
+  } catch (error) {
+    ServerLogger.info(MESSAGES.SERVER.START_FAILURE);
+    ServerLogger.error(error);
+  }
+};
+
+startServer(app);
