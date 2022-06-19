@@ -2,7 +2,7 @@ import bodyParser from "body-parser";
 import cors from "cors";
 import express from "express";
 
-import { routeMiddleware } from "../../middlewares";
+import { errorMiddleware, routeMiddleware } from "../../middlewares";
 
 import routes from "../../routes";
 
@@ -18,6 +18,8 @@ const createApp = () => {
   app.use(routeMiddleware);
 
   app.use(`/api/${ROUTE_VERSION}/`, routes);
+
+  app.use(errorMiddleware);
 
   return app;
 };
