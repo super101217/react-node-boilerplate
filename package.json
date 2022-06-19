@@ -1,0 +1,30 @@
+{
+  "name": "react-node-fullstack-boilerplate",
+  "version": "1.0.0",
+  "description": "React + Node full stack project boilerplate that's great, useful and easy to understand!",
+  "scripts": {
+    "start": "node server/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SuperUltraExtraordinaryDev/react-node-fullstack-boilerplate.git"
+  },
+  "keywords": [
+    "react",
+    "node",
+    "template",
+    "boilerplate",
+    "full-stack",
+    "babel",
+    "nodemon"
+  ],
+  "author": "Steven Kolden Fish",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SuperUltraExtraordinaryDev/react-node-fullstack-boilerplate/issues"
+  },
+  "homepage": "https://github.com/SuperUltraExtraordinaryDev/react-node-fullstack-boilerplate#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
