@@ -1,3 +1,4 @@
+import * as ENVIRONMENT from "./environment";
 import * as SERVER from "./server";
 
-export { SERVER };
+export { ENVIRONMENT, SERVER };

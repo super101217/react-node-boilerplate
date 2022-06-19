@@ -1,5 +1,11 @@
+# build
+dist
+
 # dependencies
 node_modules
 
-# build
-dist
+# environment
+.env.**
+
+# logging
+**.log

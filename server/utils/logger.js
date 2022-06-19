@@ -1,19 +1,21 @@
 import path from "path";
 import { Logger } from "logger";
 
+import Env from "./env.handler";
+
 class ServerLogger {
   fileLogger;
 
   constructor() {
-    if (process.env.NODE_ENV === "production") {
+    if (Env.isProduction()) {
       const loggerFilePath = path.join(__dirname, "../../server.log");
       this.fileLogger = new Logger(loggerFilePath);
     }
   }
 
   log(...descriptions) {
-    if (process.env.NODE_ENV !== "test") {
-      if (process.env.NODE_ENV === "production") {
+    if (!Env.isTest()) {
+      if (Env.isProduction()) {
         this.fileLogger?.log("info", ...descriptions);
       } else {
         console.log(...descriptions);
@@ -22,8 +24,8 @@ class ServerLogger {
   }
 
   info(description) {
-    if (process.env.NODE_ENV !== "test") {
-      if (process.env.NODE_ENV === "production") {
+    if (!Env.isTest()) {
+      if (Env.isProduction()) {
         this.fileLogger?.info(description);
       } else {
         console.info(description);
@@ -32,8 +34,8 @@ class ServerLogger {
   }
 
   error(description) {
-    if (process.env.NODE_ENV !== "test") {
-      if (process.env.NODE_ENV === "production") {
+    if (!Env.isTest()) {
+      if (Env.isProduction()) {
         this.fileLogger?.error(description);
       } else {
         console.error(description);
@@ -42,8 +44,8 @@ class ServerLogger {
   }
 
   fatal(description) {
-    if (process.env.NODE_ENV !== "test") {
-      if (process.env.NODE_ENV === "production") {
+    if (!Env.isTest()) {
+      if (Env.isProduction()) {
         this.fileLogger?.fatal(description);
       } else {
         console.error(description);

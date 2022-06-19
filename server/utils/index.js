@@ -1,3 +1,4 @@
+import EnvHandler from "./env.handler";
 import ServerLogger from "./logger";
 
-export { ServerLogger };
+export { EnvHandler, ServerLogger };

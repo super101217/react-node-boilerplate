@@ -1,9 +1,9 @@
 import { MESSAGES } from "../../consts";
 
-import { ServerLogger } from "../../utils";
+import { EnvHandler, ServerLogger } from "../../utils";
 
 const setupBackend = (app) => {
-  app.listen(8080, () => {
+  app.listen(EnvHandler.getEnvironmentVariable("PORT"), () => {
     ServerLogger.info(MESSAGES.SERVER.START_SUCCESS);
   });
 };
