@@ -12,7 +12,7 @@ export const login = async (req, res, next) => {
   }
 };
 
-export const signup = async (req, res, next) => {
+export const register = async (req, res, next) => {
   try {
     ResponseHandler.success(res, {
       message: "Successfully signed up!",
