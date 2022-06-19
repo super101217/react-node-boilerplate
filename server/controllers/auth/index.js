@@ -6,7 +6,9 @@ import { APIError, ResponseHandler } from "../../utils";
 
 export const login = async (req, res, next) => {
   try {
-    throw new APIError(httpStatus.BAD_REQUEST, "Sign up first!");
+    ResponseHandler(res, {
+      message: "This is login endpoint.",
+    });
   } catch (error) {
     next(error);
   }
@@ -14,8 +16,8 @@ export const login = async (req, res, next) => {
 
 export const register = async (req, res, next) => {
   try {
-    ResponseHandler.success(res, {
-      message: "Successfully signed up!",
+    ResponseHandler(res, {
+      message: "This is register endpoint.",
     });
   } catch (error) {
     next(error);
@@ -24,10 +26,9 @@ export const register = async (req, res, next) => {
 
 export const me = async (req, res, next) => {
   try {
-    throw new APIError(
-      httpStatus.UNAUTHORIZED,
-      "Unauthorized! Please log in first!"
-    );
+    ResponseHandler(res, {
+      message: "This is login endpoint.",
+    });
   } catch (error) {
     next(error);
   }
