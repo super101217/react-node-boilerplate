@@ -5,12 +5,12 @@
   "scripts": {
     "start": "npm run build && node dist/index.js",
     "build": "npm run build-client && npm run build-server",
-    "build-client": "cd client && npm run build",
     "build-server": "npm run server-build-clean && npm run server-babel-build",
     "server-build-clean": "rd dist /s /q && mkdir dist",
     "server-babel-build": "babel -d dist server",
-    "dev-client": "cd client && npm run start",
-    "dev-server": "cross-env NODE_ENV=development nodemon --exec babel-node server"
+    "build-client": "cd client && npm run build",
+    "dev-server": "cross-env NODE_ENV=development nodemon --exec babel-node server",
+    "dev-client": "cd client && npm run start"
   },
   "repository": {
     "type": "git",
@@ -46,7 +46,7 @@
     "@babel/core": "^7.18.5",
     "@babel/node": "^7.18.5",
     "@babel/preset-env": "^7.18.2",
-    "nodemon": "^2.0.16",
-    "rm": "^0.1.8"
+    "concurrently": "^7.2.2",
+    "nodemon": "^2.0.16"
   }
 }
