@@ -1,0 +1,1 @@
+# React + Node Full Stack project boilerplate
