@@ -8,6 +8,8 @@ import routes from "../../routes";
 
 import { ROUTE_VERSION } from "../../config";
 
+import { EnvHandler } from "../../utils";
+
 const createApp = () => {
   const app = express();
 
@@ -18,6 +20,10 @@ const createApp = () => {
   app.use(routeMiddleware);
 
   app.use(`/api/${ROUTE_VERSION}/`, routes);
+
+  if (EnvHandler.isProduction()) {
+    app.use(express.static("client/build"));
+  }
 
   app.use(errorMiddleware);
 

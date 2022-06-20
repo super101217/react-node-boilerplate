@@ -4,10 +4,12 @@
   "description": "React + Node full stack project boilerplate that's great, useful and easy to understand!",
   "scripts": {
     "start": "npm run build && node dist/index.js",
-    "build": "npm run build-server",
+    "build": "npm run build-client && npm run build-server",
+    "build-client": "cd client && npm run build",
     "build-server": "npm run server-build-clean && npm run server-babel-build",
-    "server-build-clean": "rd dist /s/q && mkdir dist",
+    "server-build-clean": "rd dist /s /q && mkdir dist",
     "server-babel-build": "babel -d dist server",
+    "dev-client": "cd client && npm run start",
     "dev-server": "cross-env NODE_ENV=development nodemon --exec babel-node server"
   },
   "repository": {
